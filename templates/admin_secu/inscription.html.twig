@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="/assets/css/produtos.css">
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+
+								
+{% block headernav %}
+
+{% endblock %}
+
+{% block sousheader %}
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block return %}
+<a href="{{ path('home') }}" class="image featured"> >> return </a>
+
+{{ form_start(form) }}
+    {{ form_row(form.username, {
+        "attr" : {"placeholder":"Informe o teu login"},
+        "label" : "Login :",
+        "class":""
+    }) }}
+    {{ form_row(form.password, {
+        "attr" : {"placeholder":"Informe a tua senha"},
+        "label" : "Senha :"
+    }) }}
+    {{ form_row(form.verificationPassword, {
+        "attr" : {"placeholder":"Confirme a tua senha"},
+        "label" : "Confirme senha :"
+    }) }}
+    <input type="submit" class="btn btn-primary" value="valider">
+    {{ form_widget(form) }}
+{{ form_end(form) }}
+    
+    {% block contactForm %}
+    {% endblock %}
+    
+{% endblock %}
+

@@ -22,19 +22,27 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-			{% block header %}
+		
+		{% block headernav %}	
 				<section id="header" class="wrapper">
-
+{% block header %}
 					<!-- Logo -->
 						<div id="logo">
-							<h1><a href="index.html">Marina Massoterapia</a></h1>
-							<p>Esse site e feito para promover o meu trabalho como massoterapia. A saude em primeiro lugar. Faco tambem oleos essenciais para vendas.</p>
+							<h1><a href="index.html">{{ header.titre|raw }}</a></h1>
+							<p>{{ header.contenu_text|striptags|markdown  }}</p>  
 						</div>
 
+{% endblock %} <!-- header -->
+
 					<!-- Nav -->
+					{% block nav %}
 						<nav id="nav">
 							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
+							{% for page in pages %}
+							    {% if page.nom %}
+							        <li><a href="{{path(page.nom|lower)}}">{{page.nom|lower}}</a></li>
+							    {% endif %}
+							{% endfor %}
 								<li>
 									<a href="#">Um pouquinho sobre mim</a>
 									<ul>
@@ -54,15 +62,16 @@
 										<li><a href="#">Nisl tempus</a></li>
 									</ul>
 								</li>
-								<li><a href="left-sidebar.html">Massagem</a></li>
-								<li><a href="right-sidebar.html">Oleos essenciais</a></li>
-								<li><a href="no-sidebar.html">Me contactar</a></li>
+								<li><a href="{{path('inscription')}}">Inscription</a></li>
+								<li><a href="{{path('connexion')}}">Login</a></li>
+								<li><a href="{{path('logout')}}">Logout</a></li>
 							</ul>
 						</nav>
+						{% endblock %}
 
 				</section>
-	
-			{% endblock %}
+	{% endblock %}
+			
 			<!-- Intro -->
 			{% block sousheader %}
 				<section id="intro" class="wrapper style1">
@@ -82,9 +91,15 @@
 					</div>
 				</section>
 
-			{% endblock %}
+			{% endblock %} <!-- sousheader -->
 			<!-- Main -->
-			{% block body %}
+	{% block body %}
+			    {% block menuprodutos %}
+									
+				 
+			
+			    {% endblock %}
+									
 				<section id="main" class="wrapper style2">
 					<div class="title">Os detalhes</div>
 					<div class="container">
@@ -151,57 +166,43 @@
 				</section>
 
 			<!-- Highlights -->
+			{% block highlights %}
 				<section id="highlights" class="wrapper style3">
-					<div class="title">The Endorsements</div>
+					<div class="title">Curiosidades</div>
 					<div class="container">
 						<div class="row aln-center">
+						{% for image in images %}
+						
 							<div class="col-4 col-12-medium">
 								<section class="highlight">
-									<a href="#" class="image featured">
-									<span class="image"><img src="/assets/images/IMG_6468.jpg" alt="" /></span>
-									</a>
-									<h3><a href="#">Aliquam diam consequat</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
+									
+								        <a href="#" class="image featured">
+										    <span class="image"><img src="{{asset('/assets/images/' ~ image.nom)}}" alt="" /></span>
+										</a>
+										<h3><a href="#">Aliquam diam consequat</a></h3>
+										<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+										<ul class="actions">
+											<li><a href="#" class="button style1">Learn More</a></li>
+										</ul>
+							
 								</section>
 							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured">
-									<span class="image"><img src="/assets/images/IMG_6469.jpg" alt="" /></span>
-									</a>
-									<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<a href="#" class="image featured">
-									<span class="image"><img src="/assets/images/IMG_6473.jpg" alt="" /></span>
-									</a>
-									<h3><a href="#">Mattis tempus lorem</a></h3>
-									<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
-									<ul class="actions">
-										<li><a href="#" class="button style1">Learn More</a></li>
-									</ul>
-								</section>
-							</div>
+							 {% endfor %}
+						
 						</div>
 					</div>
 				</section>
+	    {% endblock %}
 
-{% endblock %}
+		{% endblock %} <!-- body -->
 			<!-- Footer -->
 			
 			{% block contact %}
 				<section id="footer" class="wrapper">
 					<div class="title">Contato</div>
 					<div class="container">
+					{% block return %}
+					{% endblock %}
 						<header class="style1">
 							<h2>Envie agora mesmo esse formulario para pedir informacoes !</h2>
 							<p>
@@ -212,6 +213,7 @@
 							<div class="col-6 col-12-medium">
 
 								<!-- Contact Form -->
+								{% block contactForm %}
 									<section>
 										<form method="post" action="#">
 											<div class="row gtr-50">
@@ -233,6 +235,7 @@
 											</div>
 										</form>
 									</section>
+									{% endblock %}
 
 							</div>
 							<div class="col-6 col-12-medium">

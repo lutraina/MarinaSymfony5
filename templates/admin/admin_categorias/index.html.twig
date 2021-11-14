@@ -1,0 +1,35 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Categorias index{% endblock %}
+
+{% block body %}
+    <h1>Categorias index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categoria in categorias %}
+            <tr>
+                <td>{{ categoria.id }}</td>
+                <td>{{ categoria.nom }}</td>
+                <td>
+                    <a href="{{ path('admin_categorias_show', {'id': categoria.id}) }}">show</a>
+                    <a href="{{ path('admin_categorias_edit', {'id': categoria.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_categorias_new') }}">Create new</a>
+{% endblock %}

@@ -18,6 +18,21 @@ class ImagesRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Images::class);
     }
+    
+    public function findByPageBlock($valuePage, $valueBlock)
+    {
+        return $this->createQueryBuilder('i')
+        ->andWhere('i.page = :val')
+        ->setParameter('val', $valuePage)
+        ->andWhere('i.type_block = :val2')
+        ->setParameter('val2', $valueBlock)
+        ->orderBy('i.id', 'ASC')
+        ->setMaxResults(10)
+        ->getQuery()
+        ->getResult()
+        ;
+    }
+    
 
     // /**
     //  * @return Images[] Returns an array of Images objects
@@ -34,6 +49,8 @@ class ImagesRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
+    
+    
     */
 
     /*

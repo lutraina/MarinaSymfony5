@@ -1,0 +1,42 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}ContenuPages{% endblock %}
+
+{% block body %}
+    <h1>ContenuPages</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contenu_page.id }}</td>
+            </tr>
+            <tr>
+                <th>Contenu_text</th>
+                <td>{{ contenu_page.contenuText }}</td>
+            </tr>
+            <tr>
+                <th>Id_image</th>
+                <td>{{ contenu_page.idImage }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ contenu_page.createdAt ? contenu_page.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ contenu_page.updatedAt ? contenu_page.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ contenu_page.titre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_contenu_pages_index') }}">back to list</a>
+
+    <a href="{{ path('admin_contenu_pages_edit', {'id': contenu_page.id}) }}">edit</a>
+
+    {{ include('admin/admin_contenu_pages/_delete_form.html.twig') }}
+{% endblock %}

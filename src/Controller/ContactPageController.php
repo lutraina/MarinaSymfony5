@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactPageController extends AbstractController
 {
     /**
-     * @Route("/contact/page", name="contact_page")
+     * @Route("/contato", name="contato")
      */
     public function index(): Response
     {

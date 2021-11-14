@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PagesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,21 @@ class Pages
      * @ORM\Column(type="text", nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $nom_route;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ContenuPages::class, mappedBy="pages")
+     */
+    private $contenus;
+
+    public function __construct()
+    {
+        $this->contenus = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -86,6 +103,48 @@ class Pages
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getNomRoute(): ?string
+    {
+        return $this->nom_route;
+    }
+
+    public function setNomRoute(string $nom_route): self
+    {
+        $this->nom_route = $nom_route;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ContenuPages[]
+     */
+    public function getContenus(): Collection
+    {
+        return $this->contenus;
+    }
+
+    public function addContenu(ContenuPages $contenu): self
+    {
+        if (!$this->contenus->contains($contenu)) {
+            $this->contenus[] = $contenu;
+            $contenu->setPages($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContenu(ContenuPages $contenu): self
+    {
+        if ($this->contenus->removeElement($contenu)) {
+            // set the owning side to null (unless already changed)
+            if ($contenu->getPages() === $this) {
+                $contenu->setPages(null);
+            }
+        }
 
         return $this;
     }

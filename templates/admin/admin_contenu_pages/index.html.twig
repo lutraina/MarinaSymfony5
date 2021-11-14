@@ -1,0 +1,43 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}ContenuPages index{% endblock %}
+
+{% block body %}
+    <h1>ContenuPages index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Contenu_text</th>
+                <th>Id_image</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>Titre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contenu_page in contenu_pages %}
+            <tr>
+                <td>{{ contenu_page.id }}</td>
+                <td>{{ contenu_page.contenuText }}</td>
+                <td>{{ contenu_page.idImage }}</td>
+                <td>{{ contenu_page.createdAt ? contenu_page.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ contenu_page.updatedAt ? contenu_page.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ contenu_page.titre }}</td>
+                <td>
+                    <a href="{{ path('admin_contenu_pages_show', {'id': contenu_page.id}) }}">show</a>
+                    <a href="{{ path('admin_contenu_pages_edit', {'id': contenu_page.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_contenu_pages_new') }}">Create new</a>
+{% endblock %}

@@ -37,6 +37,22 @@ class ContenuPages
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $titre;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Pages::class, inversedBy="contenus")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $pages;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=SecaoPage::class, inversedBy="contenuPages")
+     */
+    private $sections;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +102,55 @@ class ContenuPages
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getIdPage(): ?bool
+    {
+        return $this->id_page;
+    }
+    
+
+    public function setIdPage(bool $id_page): self
+    {
+        $this->id_page = $id_page;
+
+        return $this;
+    }
+
+    public function getTitre(): ?string
+    {
+        return $this->titre;
+    }
+
+    public function setTitre(string $titre): self
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    public function getPages(): ?Pages
+    {
+        return $this->pages;
+    }
+
+    public function setPages(?Pages $pages): self
+    {
+        $this->pages = $pages;
+
+        return $this;
+    }
+
+    public function getSections(): ?SecaoPage
+    {
+        return $this->sections;
+    }
+
+    public function setSections(?SecaoPage $sections): self
+    {
+        $this->sections = $sections;
 
         return $this;
     }

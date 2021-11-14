@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" />
+        <title>{% block title %}Marina Traina Massoterapia{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="/assets/css/main.css">
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+   
+        
+        
+        <body class="homepage is-preload">
+        
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			{% block header %}
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">Marina Massoterapia</a></h1>
+							<p>Esse site e feito para promover o meu trabalho como massoterapia. A saude em primeiro lugar. Faco tambem oleos essenciais para vendas.</p>  
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+							 
+							        <li><a href="">menu</a></li>
+							  
+								<li>
+									<a href="#">Um pouquinho sobre mim</a>
+									<ul>
+										<li><a href="#">Lorem ipsum</a></li>
+										<li><a href="#">Magna veroeros</a></li>
+										<li><a href="#">Etiam nisl</a></li>
+										<li>
+											<a href="#">Sed consequat</a>
+											<ul>
+												<li><a href="#">Lorem dolor</a></li>
+												<li><a href="#">Amet consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam nisl</a></li>
+												<li><a href="#">Sed feugiat</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Nisl tempus</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+
+				</section>
+	
+			{% endblock %}
+			<!-- Intro -->
+			{% block sousheader %}
+				<section id="intro" class="wrapper style1">
+					<div class="title">Massagem e oleos essenciais</div>
+					<div class="container">
+						<p class="style1">A massagem : uma das melhores formas de conexao entre corpo e mente</p>
+						<p class="style2">
+							O objetivo primordial da massagem : <br class="mobile-hide" />
+							 revitalizar a vital <a href="http://html5up.net" class="nobr">VITAL</a>
+						</p>
+						<p class="style3">Esse site <strong>responsive</strong>, e feito <strong> por Luciana Hembert</strong> para <strong> Marina Traina </strong>,
+						para poder fazer a divulgacao do meu trabalho baseado na saude. <a href="http://html5up.net/license">Sendo um site serio, prezo </a>a que ele 
+						deja usado para esses fins</p>
+						<ul class="actions">
+							<li><a href="#" class="button style3 large">Proceed</a></li>
+						</ul>
+					</div>
+				</section>
+
+			{% endblock %}
+			<!-- Main -->
+			{% block body %}
+			{% block menuprodutos %}
+									
+				 
+			
+			{% endblock %}
+									
+				<section id="main" class="wrapper style2">
+					<div class="title">Os detalhes</div>
+					<div class="container">
+
+						<!-- Image -->
+							<a href="#" class="image featured">
+								<span class="image"><img src="/assets/images/marina/1_1129.jpg" alt="" /></span>
+								<span class="image"><img src="/assets/images/marina/1_099.jpg" alt="" /></span>
+							</a>
+
+						<!-- Features -->
+							<section id="features">
+								<header class="style1">
+									<h2>Adquira uma massagem pelo numero : (19) 99947-6110</h2>
+									<p>Marina Traina : massagista et terapeuta</p>
+								</header>
+								<div class="feature-list">
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="icon fa-comment">Ajuda a combater a sensacao de estresse</h3>
+												<p>Uma excelente opcao para pacientes com dores cronicas, principalmente as que acometem as articulacoes, como artrite, fibromialgia, entre outras.</p>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="icon solid fa-sync">Alivia tensoes e reduz a ansiedade</h3>
+												<p>A propria massagem pode trazer beneficios especificos para a regiao em que esta sendo aplicada.</p>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="icon fa-image">Alivia dores musculares</h3>
+												<p> Por exemplo, a massagem na cabeca ajuda a aliviar dores de cabeca.</p>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="icon solid fa-cog">Estimula a circulacao sanguinea</h3>
+												<p>Nos pes, contribui para reduzir a dor apos caminhar longas distancias. No rosto, estimula a circulacao de sangue e ate previne o envelhecimento precoce.</p>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="icon solid fa-wrench">Melhora a pressao arterial</h3>
+												<p>O curso de massoterapia tem atraido cada vez mais interessados de alguns anos para ca.</p>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<h3 class="icon solid fa-check">Contribui para eliminar toxinas e residuos metabolicos do organismo</h3>
+												<p>Corrida de rua, meditacao, pilates, yoga e seus derivados, como acro yoga, hot yoga etc, e ate o muay thai sao praticas que tem se tornado populares a medida em que as pessoas passam a ter mais consciencia sobre os maleficios que o estresse e a ansiedade podem trazer para a saude</p>
+											</section>
+										</div>
+									</div>
+								</div>
+								<ul class="actions special">
+									<li><a href="#" class="button style1 large">Cursos online</a></li>
+									<li><a href="#" class="button style2 large">Quanto custa ?</a></li>
+								</ul>
+							</section>
+
+					</div>
+				</section>
+
+			<!-- Highlights -->
+			{% block highlights %}
+				<section id="highlights" class="wrapper style3">
+					<div class="title">Curiosidades</div>
+					<div class="container">
+						<div class="row aln-center">
+						{% for image in images %}
+						
+							<div class="col-4 col-12-medium">
+								<section class="highlight">
+									
+								        <a href="#" class="image featured">
+										    <span class="image"><img src="{{asset('/assets/images/' ~ image.nom)}}" alt="" /></span>
+										</a>
+										<h3><a href="#">Aliquam diam consequat</a></h3>
+										<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+										<ul class="actions">
+											<li><a href="#" class="button style1">Learn More</a></li>
+										</ul>
+							
+								</section>
+							</div>
+							 {% endfor %}
+						
+						</div>
+					</div>
+				</section>
+	    {% endblock %}
+
+		{% endblock %}
+			<!-- Footer -->
+			
+			{% block contact %}
+				<section id="footer" class="wrapper">
+					<div class="title">Contato</div>
+					<div class="container">
+						<header class="style1">
+							<h2>Envie agora mesmo esse formulario para pedir informacoes !</h2>
+							<p>
+								Marina Traina : (19) 99947-6110
+							</p>
+						</header>
+						<div class="row">
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact Form -->
+									<section>
+										<form method="post" action="#">
+											<div class="row gtr-50">
+												<div class="col-6 col-12-small">
+													<input type="text" name="name" id="contact-name" placeholder="Nome" />
+												</div>
+												<div class="col-6 col-12-small">
+													<input type="text" name="email" id="contact-email" placeholder="Email" />
+												</div>
+												<div class="col-12">
+													<textarea name="message" id="contact-message" placeholder="Mensagem" rows="4"></textarea>
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><input type="submit" class="style1" value="Enviar" /></li>
+														<li><input type="reset" class="style2" value="Reinicialisar" /></li>
+													</ul>
+												</div>
+											</div>
+										</form>
+									</section>
+
+							</div>
+							<div class="col-6 col-12-medium">
+
+								<!-- Contact -->
+									<section class="feature-list small">
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-home">Endereco postal</h3>
+													<p>
+														Campinas - Sao Paulo
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-comment">Social</h3>
+													<p>
+														<a href="#">Instagram</a><br />
+														<a href="#">facebook</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-envelope">Email</h3>
+													<p>
+														<a href="#">marina.traina@yahoo.com.br</a>
+													</p>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section>
+													<h3 class="icon solid fa-phone">Phone</h3>
+													<p>
+														(19) 99947-6110
+													</p>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+						<div id="copyright">
+							<ul>
+								<li>&copy; Untitled.</li><li>Design: <a href="#">Luciana Hembert</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			{% endblock %}
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	
+    </body>
+</html>
+
+
+
+	
+</html>
