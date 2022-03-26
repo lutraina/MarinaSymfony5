@@ -28,8 +28,8 @@
 {% block header %}
 					<!-- Logo -->
 						<div id="logo">
-							<h1><a href="index.html">{{ header.titre|raw }}</a></h1>
-							<p>{{ header.contenu_text|striptags|markdown  }}</p>  
+							<!--<h1><a href="index.html">{{ header.titre|raw }}</a></h1>
+							<p>{{ header.contenu_text|striptags|markdown  }}</p>  -->
 						</div>
 
 {% endblock %} <!-- header -->
@@ -40,10 +40,10 @@
 							<ul>
 							{% for page in pages %}
 							    {% if page.nom %}
-							        <li><a href="{{path(page.nom|lower)}}">{{page.nom|lower}}</a></li>
+							        <li><a href="{{path(page.nom|lower)}}">{{page.title|lower}}</a></li>
 							    {% endif %}
 							{% endfor %}
-								<li>
+								<!--<li>
 									<a href="#">Um pouquinho sobre mim</a>
 									<ul>
 										<li><a href="#">Lorem ipsum</a></li>
@@ -61,10 +61,10 @@
 										</li>
 										<li><a href="#">Nisl tempus</a></li>
 									</ul>
-								</li>
-								<li><a href="{{path('inscription')}}">Inscription</a></li>
+								</li>-->
+								<!--<li><a href="{{path('inscription')}}">Inscription</a></li>
 								<li><a href="{{path('connexion')}}">Login</a></li>
-								<li><a href="{{path('logout')}}">Logout</a></li>
+								<li><a href="{{path('logout')}}">Logout</a></li>-->
 							</ul>
 						</nav>
 						{% endblock %}

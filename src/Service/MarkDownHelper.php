@@ -13,7 +13,7 @@ class MarkDownHelper
     private $is_debug;
     
     public function __construct(MarkdownParserInterface $markDownParser, CacheInterface $cache, bool $is_debug){
-        dump($is_debug);
+        //dump($is_debug);
         $this->cache = $cache;
         $this->is_debug = $is_debug;
         $this->markDownParser = $markDownParser;

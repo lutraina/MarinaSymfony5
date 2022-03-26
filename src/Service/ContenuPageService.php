@@ -44,7 +44,7 @@ class ContenuPageService
         if($this->is_visible){
             $arrayRes = [];
             $contenuPage = $this->getContenuHeader($page, $section);
-            
+           
             $arrayRes['titre'] = $this->markdown($contenuPage[0]->getTitre());
             $arrayRes['contenu_text'] = $this->markdown($contenuPage[0]->getContenuText());
             

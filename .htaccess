@@ -1,0 +1,5 @@
+# Par exemple rediriger http://domaine.fr/xyz.html vers http://domaine.fr/index.php?xyz
+#
+RewriteEngine on
+RewriteBase /
+RewriteRule ^([a-z]+)\.html$ /index.php?$1 [R,L]

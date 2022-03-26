@@ -5,7 +5,17 @@
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
 
+{% block header %}
+	<section id="header" class="wrapper" style="width:600px">
 
+		<!-- Logo -->
+			<div id="logo" >
+				<!--<h1><a href="index.html">{{ header.titre|raw }}</a></h1>
+				<p>{{ header.contenu_text|striptags|markdown  }}</p>  -->
+			</div>
+	</section>
+	
+{% endblock %}
 
 {% block body %}
 <div id="main" class="wrapper style2">
